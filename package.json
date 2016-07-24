@@ -1,11 +1,13 @@
 {
   "name": "react-redux-dirty-state",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "React Redux Dirty State Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/you/repo.git"
+    "url": "https://github.com/gmmorris/react-redux-dirty-state.git"
   },
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
