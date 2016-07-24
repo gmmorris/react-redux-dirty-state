@@ -1,5 +1,5 @@
-import reducer from './reducers/dirtyState'
+import dirtyStateReducer from './reducers/dirtyState'
 import component from './containers/dirtyState'
 
 export default component
-export const dirtyStateReducer = reducer
+export const reducer = dirtyStateReducer
