@@ -197,7 +197,7 @@ describe('DirtyState', () => {
       </DirtyState>
     )
 
-    const setState = wrapper.find('span').prop(`set${dirtyKey}State`)
+    const setState = wrapper.find('span').prop('setDirtyTodoState')
     expect(
       setState
     ).to.be.a(
@@ -218,7 +218,7 @@ describe('DirtyState', () => {
     const STATE = {
       title: 'My Todo'
     }
-    const setState = wrapper.find('span').prop(`set${dirtyKey}State`)
+    const setState = wrapper.find('span').prop('setDirtyTodoState')
     setState(STATE)
     expect(
       onSetDirtyState
@@ -249,7 +249,7 @@ describe('DirtyState', () => {
       return dirtyTodo
     }
 
-    const setState = wrapper.find('span').prop(`set${dirtyKey}State`)
+    const setState = wrapper.find('span').prop('setDirtyTodoState')
     setState(STATE_FUNCTION)
     expect(
       onSetDirtyState
@@ -267,7 +267,7 @@ describe('DirtyState', () => {
     const onStateHasBeenSet = stub()
 
     const wrapper = shallow(
-      <DirtyState  dirtyKey={dirtyKey} dirtyTodo={dirtyTodo} onSetDirtyState={onSetDirtyState} onClearDirtyState={stub()}>
+      <DirtyState dirtyKey={dirtyKey} dirtyTodo={dirtyTodo} onSetDirtyState={onSetDirtyState} onClearDirtyState={stub()}>
         <span />
       </DirtyState>
     )
@@ -276,7 +276,7 @@ describe('DirtyState', () => {
       return dirtyTodo
     }
 
-    const setState = wrapper.find('span').prop(`set${dirtyKey}State`)
+    const setState = wrapper.find('span').prop('setDirtyTodoState')
     setState(STATE_FUNCTION, onStateHasBeenSet)
       .then(() => {
         expect(
@@ -299,7 +299,7 @@ describe('DirtyState', () => {
     )
 
     expect(
-      wrapper.find('span').prop(`clear${dirtyKey}State`)
+      wrapper.find('span').prop('clearDirtyTodoState')
     ).to.deep.equal(
       onClearDirtyState
     )

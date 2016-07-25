@@ -2,6 +2,7 @@ import React, { Children, PropTypes, cloneElement } from 'react'
 import isFunction from 'lodash.isfunction'
 import { connect } from 'react-redux'
 import { setDirtyState, clearDirtyState } from '../actions/dirtyState'
+import camelcase from 'lodash.camelcase'
 
 const createSetDirtyStateHandler = (onSetDirtyState, dirtyState) =>
     (newState, onStateSet) =>
@@ -16,8 +17,8 @@ export const DirtyState = (props) => {
   const { dirtyKey, [dirtyKey]: dirtyState, onSetDirtyState, onClearDirtyState } = props
   const childProps = {
     [dirtyKey]: dirtyState,
-    [`set${dirtyKey}State`]: createSetDirtyStateHandler(onSetDirtyState, dirtyState),
-    [`clear${dirtyKey}State`]: onClearDirtyState
+    [camelcase(`set-${dirtyKey}-State`)]: createSetDirtyStateHandler(onSetDirtyState, dirtyState),
+    [camelcase(`clear-${dirtyKey}-State`)]: onClearDirtyState
   }
   return (
     <div>
