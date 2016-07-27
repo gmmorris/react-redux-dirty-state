@@ -27,7 +27,8 @@ const store = createStore(rootReducer);
 
 You now ready to go and can start defining either Providers or DirtyState components, and you can learn how to do that by looking at the API documentation bellow.
 
-**API**
+# API
+
 The _react-redux-dirty-state_ module exposes three components:
 
 ## DirtyState Component
