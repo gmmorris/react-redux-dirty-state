@@ -1,7 +1,5 @@
 # React Redux Dirty State Component
 
-React Redux Dirty State Component
-
 A little <i class="icon-cog"></i> **Utility** Component meant to standardise the way in which _dirty state_ is created in your react-redux application. 
 The goal of the module is to simplify the usecase where you need a component to hold some kind of dirty state, such as in the case of a form where the user input needs to be stored somewhere, but isn't _real_ data yet, but rather _dirty_, but we'd still want it stored in our Redux store in order to maintain our *single source of truth*.
 
